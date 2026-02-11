@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Be My Galentine?</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      width: 320px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 26px;
+      color: #ff4f81;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 25px;
+    }
+
+    button {
+      border: none;
+      padding: 12px 20px;
+      margin: 8px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .yes {
+      background: #ff4f81;
+      color: white;
+    }
+
+    .yes:hover {
+      transform: scale(1.1);
+    }
+
+    .no {
+      background: #f1f1f1;
+      color: #333;
+      position: absolute;
+    }
+
+    .response {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #ff4f81;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Hiee Aleeshaaa💖</h1>
+    <p>Will you be my Galentine? Momos, Main character energy. And a lot more memories!!? </p>
+
+    <button class="yes" onclick="yesClick()">YESSS 💕</button>
+    <button class="no" id="noBtn">Bhak 😒</button>
+
+    <div class="response" id="response">I love youu bbg Galentine secured 💅💐</div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+    const response = document.getElementById('response');
+
+    noBtn.addEventListener('mouseover', () => {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    function yesClick() {
+      response.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
